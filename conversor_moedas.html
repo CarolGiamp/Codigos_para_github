@@ -12,17 +12,80 @@
           Conversor de moedas
         </h1>
         <p class="page-subtitle">
-          Descubra os valores em dolar U$
+          Descubra os valores em real R$
         </p>
-        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt=""><br><br>
+        
         <label for="moeda">Insira o valor</label><br>
         <input type="number" id="valor" size="2" /><br>
         <button type="submit" onclick="Converter()">Converter</button>
         <h2 id="valorConvertido"></h2>
       </div>
-      <a href="https://alura.com.br/" target="_blank">
-        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
-       
+      
+       <style>
+         body {
+  font-family: "Roboto Mono", monospace;
+  min-height: 400px;
+  background-image: url("https://d5y9g7a5.rocketcdn.me/wp-content/uploads/2019/03/moedas-mais-raras-do-real-quais-sao-porque-e-o-quanto-custam-960x540.jpg");
+  background-color: #000000;
+  background-size: 152vh;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  height: 100vh;
+}
+
+.page-title {
+  color: #ffffff;
+  margin: 0 0 5px;
+}
+
+.page-subtitle {
+  color: white;
+  margin-top: 10px;
+}
+
+input {
+  margin: 12px;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+label {
+  color: white;
+}
+
+button {
+  margin-top: 12px;
+  padding: 4px 8px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 30px;
+}
+       </style>
+
+       <script>
+         function Converter() {
+  var valorElemento = document.getElementById("valor");
+  var valor = valorElemento.value;
+  var valorEmDolarNumerico = parseFloat(valor);
+
+  var valorEmReal = valorEmDolarNumerico * 5;
+  console.log(valorEmReal);
+
+  var elementoValorConvertido = document.getElementById("valorConvertido");
+  var valorConvertido = "O resultado em real é R$ " + valorEmReal;
+  elementoValorConvertido.innerHTML = valorConvertido;
+}
+
+       </script>
 </body>
 
 </html>
